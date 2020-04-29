@@ -1,0 +1,148 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+.ui-btn {
+    text-transform: uppercase;
+    padding: 10px 50px;
+    font-size: $button-font-size;
+    -webkit-transition: .5s;
+    transition: .5s;
+    font-weight: 500;
+    border-radius: 0;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.ui-btn:disabled {
+    background-color: $disabled-btn-background;
+    color: $disabled-btn-text;
+    border: $disabled-btn-border;
+}
+
+.ui-btn:disabled:hover {
+    background-color: $disabled-btn-border;
+    color: $disabled-btn-text !important;
+}
+
+.ui-btn:hover,
+.ui-btn:active,
+.ui-btn:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+.btn-contact {
+    display: inline-block;
+    background-color: $base-background;
+    color: $base-color-hover;
+    border: 2px solid transparent;
+}
+
+.btn-contact:hover {
+    color: $base-background;
+    background: transparent;
+    box-shadow: 0 15px 20px $btn-box-shadow;
+}
+
+.btn-more {
+    display: inline-block;
+    -webkit-transition: .5s;
+    transition: .5s;
+    color: $base-color-hover;
+    border: 2px solid $base-color-hover;
+}
+
+.btn-more:hover {
+    background-color: $base-background;
+    color: $base-black;
+}
+
+.learn-btn {
+    display: inline-block;
+    text-transform: capitalize;
+    color: $base-color-hover;
+}
+
+.learn-btn:hover {
+    color: $base-color-hover;
+}
+
+.btn-submit {
+    display: inline-block;
+    color: $base-background;
+    background-color: $base-color-hover;
+    border: 2px solid $base-color-hover;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    color: $base-color-hover !important;
+    background-color: transparent;
+}
+
+.btn-reset {
+    color: $reset-text;
+    background-color: transparent;
+    border-color: $reset-border;
+    width: 100%;
+}
+
+.btn-reset:focus,
+.btn-reset.focus,
+.btn-reset:active,
+.btn-reset.active,
+.btn-reset:hover {
+    color: $reset-border;
+    background-color: $reset-background;
+    border-color: $reset-border;
+}
+
+.btn-download {
+    display: inline-block;
+    color: $white;
+    background-color: $banner-text;
+    border: 2px solid $banner-text;
+}
+
+.btn-download:hover {
+    color: $banner-text !important;
+    background-color: transparent;
+}
+
+.btn-danger {
+    background-color: $btn-danger-background !important;
+    border-color: $btn-danger-background !important;
+    box-shadow: none !important;
+    color: $white !important;
+}
+
+.btn-danger:focus,
+.btn-danger.focus,
+.btn-danger:active,
+.btn-danger.active,
+.btn-danger:hover {
+    color: $white !important;
+    background-color: $btn-danger-active-background !important;
+    border-color: $btn-danger-active-background !important;
+    box-shadow: none !important;
+}
+
+.btn-contact {
+    display: inline-block;
+    color: $white;
+    background-color: $background;
+    border: 2px solid $background;
+}
+
+.btn-contact:hover,
+.btn-contact:focus,
+.btn-contact:active {
+    color: $background !important;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 576px) {
+    .btn-more {
+        padding: 9.5px 28px;
+    }
+}

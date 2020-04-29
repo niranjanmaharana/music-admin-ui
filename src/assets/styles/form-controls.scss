@@ -1,0 +1,46 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+input:focus,
+textarea:focus,
+select:focus,
+button:focus,
+a:focus {
+    outline: none;
+}
+
+ipnut,
+button {
+    border: 0px;
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+}
+
+.form-contact .form-group {
+    margin-bottom: 30px;
+}
+
+.form-contact .form-control {
+    border: 1px solid $base-text-color !important;
+    border-radius: 5px;
+    height: 48px;
+    padding-left: 15px;
+    font-size: 13px;
+    background: 0 0;
+}
+
+.form-contact textarea {
+    border-radius: 12px;
+    height: 100% !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.has-error .form-control {
+    border-bottom-color: $background;
+}

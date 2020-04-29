@@ -1,0 +1,85 @@
+$base-background: #ffffff;
+$background: #1976d2;
+$header-background: rgb(66, 133, 244);
+$base-text-color: #000000;
+$white: #ffffff;
+$black: #000000;
+$base-black: #000000;
+$base-icon: $white;
+$base-color-hover: #ea5267;
+$base-odd-background: #e1e1e4;
+$menu-color: $base-black;
+$banner-text: #6ba8f9;
+$violett: #954293;
+$widget-border-color: #e9e9e9;
+$btn-danger-background: #f28281;
+$btn-danger-active-background: #eb3d3c;
+$collasped-navbar-background: rgba(1, 1, 1, 0.8);
+$btn-box-shadow: rgba(0, 0, 0, .3);
+$gray-box-shadow: rgba(0, 0, 0, 0.1);
+$color-lightsalmon: #FFA07A;
+$color-coral: #FF7F50;
+$color-tomato: #FF6347;
+$color-orangered: #FF4500;
+$color-darkorange: #FF8C00;
+$color-orange: #FFA500;
+$color-indianred: #CD5C5C;
+$color-lightcoral: #F08080;
+$color-salmon: #FA8072;
+$color-darksalmon: #E9967A;
+$button-font-size: 0.8rem;
+$base-font-size: 13px;
+
+/*
+Scrollbar css
+*/
+
+$scroll-bg: #000000;
+$scroll-thumb-bg: rgba(145, 141, 141, 0.1);
+
+/*
+search container
+*/
+
+$music-seach-background:#4285f4;
+$search-field-background:rgba(255, 255, 255, 0.16);
+
+/*
+Footer css variables
+*/
+
+$footer-background: #378fe7;
+$footer-text-color: #63615f;
+
+/*contact form*/
+
+$contact-form-text: #a39a99;
+
+/*reset button colors*/
+
+$reset-text: #333;
+$reset-background: #e6e6e6;
+$reset-border: #adadad;
+$disabled-btn-text: #FFFFFF;
+$disabled-btn-background: #adadad;
+$disabled-btn-border: #969494;
+
+/*
+Loader css variables
+*/
+
+$loader-background: rgba(0, 0, 0, 0.9);
+$loader-bouncer: #eb3d3c;
+$loader-text: #eb3d3c;
+$bouncer-width: 15px;
+$bouncer-height: 15px;
+$bounce_height: 30px;
+
+/*
+Modal css variables
+*/
+
+$modal-background: $white;
+$modal-text: #000000;
+$modal-header-background: #378fe7;
+$modal-header-text: $white;

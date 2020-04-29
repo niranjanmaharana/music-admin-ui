@@ -1,0 +1,41 @@
+<section class="header">
+    <div class="container-fluid banner">
+        <nav class="navbar fixed-top sticky-top navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="../assets/images/favicon.png" width="30" height="30" class="d-inline-block align-top" alt=""> Admin Panel
+            </a>
+            <div class="ml-auto">
+                <form class="form-inline my-2 my-lg-0 music-search-conainer">
+                    <input class="form-control" type="search" placeholder="Search Lyrics" aria-label="Search">
+                    <button class="btn btn-outline-primary my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+                    <div class="dropdown my-2 my-lg-0 show user-icon" *ngIf="this.authService.getUser() != null">
+                        <a class="dropdown-toggle" href="#" role="button" id="userinfolink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user"></i> {{this.authService.getUser() != null && this.authService.getUser().firstNm}}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right user-options" aria-labelledby="userinfolink">
+                            <button class="dropdown-item" role="button" (click)="this.authService.logout()"><i class="fa fa-sign-out"></i> Logout</button>
+                            <button class="dropdown-item" role="button"><i class="fa fa-lock"></i> Change Password</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <nav class="navbar navbar-expand-sm navbar-light navigation" *ngIf="this.authService.getUser() != null">
+        <a class="navbar-brand navbar-toggler" [ngClass]="{'show': expandNavbar}" href="index.html">
+            <span>Musix</span>
+        </a>
+        <button class="navbar-toggler toggler" type="button" data-toggle="collapse" (click)="expandNavbar = !expandNavbar" data-target="#menubar" aria-controls="menubar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="menu-icon"><i class="fa fa-bars"></i></span>
+        </button>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button> -->
+        <div class="collapse navbar-collapse menu-item" [ngClass]="{'show': expandNavbar}" id="menubar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/properties" routerLinkActive="active">Properties</a></li>
+            </ul>
+        </div>
+    </nav>
+</section>

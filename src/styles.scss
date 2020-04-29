@@ -1,0 +1,179 @@
+// CSS Reset, comment out if not required or using a different module
+@import './sass/variables';
+@import './sass/mixins';
+@import '../src/assets/styles/form-controls.scss';
+@import '../src/assets/styles/buttons.scss';
+@import '../src/assets/styles/base-grid.scss';
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    src: url(../src/assets/fonts/opensans/OpenSans-Regular.ttf);
+}
+
+body {
+    font-family: 'Open Sans' !important;
+    padding: 0;
+    margin: 0px;
+    font-size: $base-font-size;
+    background-color: $base-background !important;
+    color: $base-text-color !important;
+    height: 100%;
+}
+
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px $scroll-bg;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $background;
+    outline: 1px solid $base-color-hover;
+}
+
+button,
+input {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.btn:focus {
+    outline: none !important;
+}
+
+button:focus,
+input:focus,
+button:active,
+input:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.btn:focus,
+.btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+html {
+    height: 100%;
+}
+
+.app-loading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    .logo {
+        width: 100px;
+        height: 100px;
+        background: url(./assets/images/favicon.png) center center no-repeat;
+    }
+    .spinner {
+        height: 200px;
+        width: 200px;
+        animation: rotate 2s linear infinite;
+        transform-origin: center center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        .path {
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+            animation: dash 1.5s ease-in-out infinite;
+            stroke-linecap: round;
+            stroke: #ddd;
+        }
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $base-text-color;
+}
+
+ol,
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:hover {
+    outline: none;
+}
+
+.clear {
+    clear: both;
+}
+
+img {
+    max-width: 100%
+}
+
+.text-danger {
+    color: $background;
+}
+
+.modal {
+    -webkit-backdrop-filter: opacity(0.4);
+    backdrop-filter: opacity(0.4);
+    .modal-header {
+        background: $modal-header-background;
+        color: $modal-header-text;
+        font-size: 18px;
+        padding: 0.5rem 1rem;
+        .modal-title {
+            pointer-events: none;
+        }
+    }
+    .modal-body {
+        padding: 1.5rem 1rem;
+    }
+}
+
+.section-content {
+    display: grid;
+    align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        margin-top: 90px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
+}

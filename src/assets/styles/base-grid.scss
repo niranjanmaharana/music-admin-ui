@@ -1,0 +1,59 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+.base-grid {
+    font-size: 13px;
+    // border: 2px solid $header-background;
+    padding: 0.5rem;
+    border-radius: 2px;
+    .data-grid::-webkit-scrollbar {
+        width: 6px;
+    }
+    .data-grid::-webkit-scrollbar-track {
+        box-shadow: solid 0 0 6px $scroll-bg;
+    }
+    .data-grid::-webkit-scrollbar-thumb {
+        background-color: rgb(185, 184, 184);
+        outline: 2px solid rgb(59, 59, 59); //$scroll-bg;
+    }
+    .data-grid {
+        height: 350px;
+        max-height: 350px;
+        overflow: auto;
+        padding: 0.5rem;
+        border: 1px solid $banner-text;
+        border-bottom: none;
+        .table {
+            margin-bottom: 0px;
+            thead {
+                background: $banner-text;
+                color: $white;
+            }
+            td,
+            th {
+                padding: .6rem
+            }
+        }
+    }
+    .pagination {
+        background: $banner-text;
+        padding: 8px;
+        border-radius: 0px;
+        color: $white;
+        .ngx-pagination {
+            margin-bottom: 0px !important;
+            a,
+            button {
+                color: $white;
+            }
+            a:hover,
+            button:hover {
+                background: $white;
+                color: $black;
+            }
+            .current {
+                background-color: $header-background;
+                color: $white;
+            }
+        }
+    }
+}
