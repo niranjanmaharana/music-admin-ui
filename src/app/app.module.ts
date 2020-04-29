@@ -9,48 +9,36 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { BodyComponent } from './body/body.component';
-import { FooterComponent } from './footer/footer.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { ContentComponent } from './content/content.component';
-import { CategoriesComponent } from './categories/categories.component';
+import { ContentComponent } from './components/content/content.component';
 import { AppTooltipOptions } from './const/AppTooltipOptions';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ErrorComponent } from './error/error.component';
-import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
-import { BannerComponent } from './banner/banner.component';
-import { LyricComponent } from './lyric/lyric.component';
-import { AboutComponent } from './about/about.component';
-import { ControlMessagesComponent } from './control-messages/control-messages.component';
-import { LoginComponent } from './login/login.component';
-import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ControlMessagesComponent } from './components/control-messages/control-messages.component';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
-import { PropertiesComponent } from './properties/properties.component';
-import { HttpLoaderComponent } from './http-loader/http-loader.component';
 import { LoaderService } from './services/loader.service';
 import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
+import { BannerComponent } from './components/banner/banner.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ErrorComponent } from './components/error/error.component';
+import { HomeComponent } from './components/home/home.component';
+import { LyricComponent } from './components/lyric/lyric.component';
+import { LoginComponent } from './components/login/login.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { PropertiesComponent } from './components/properties/properties.component';
+import { HttpLoaderComponent } from './components/http-loader/http-loader.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HeaderComponent,
-		BodyComponent,
 		FooterComponent,
-		SidenavComponent,
 		ContentComponent,
-		CategoriesComponent,
 		ErrorComponent,
 		HomeComponent,
-		ContactComponent,
 		BannerComponent,
 		LyricComponent,
-		AboutComponent,
 		ControlMessagesComponent,
 		LoginComponent,
-		AdminHomeComponent,
 		ResetPasswordComponent,
 		PropertiesComponent,
 		HttpLoaderComponent
@@ -77,6 +65,4 @@ import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
 		{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }],
 	bootstrap: [AppComponent]
 })
-export class AppModule {
-
-}
+export class AppModule { }

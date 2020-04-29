@@ -21,11 +21,8 @@ export class AuthenticationService {
         private toaster: ToastrService,
         private idle: Idle,
         private keepalive: Keepalive) {
-        // sets an idle timeout of 5 seconds, for testing purposes.
         idle.setIdle(AppConstant.IDLE_TIME);
-        // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
         idle.setTimeout(AppConstant.TIMEOUT_INTERVAL);
-        // sets the default interrupts, in this case, things like clicks, scrolls, touches to the document
         idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
 
         idle.onIdleEnd.subscribe(() => {
