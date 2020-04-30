@@ -1,7 +1,9 @@
 @import '../sass/variables';
 @import '../sass/mixins';
 .wrapper {
-    width: 90%;
+    display: flex;
+    width: 95%;
+    align-items: stretch;
     margin: 0 auto;
     padding: 1.5rem;
     align-items: center;
@@ -11,6 +13,6 @@
 
 @media (max-width: 768px) {
     .wrapper {
-        width: 90%;
+        width: 95%;
     }
 }

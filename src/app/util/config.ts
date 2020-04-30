@@ -16,6 +16,10 @@ export class Configuration {
         this.user = jwt_decode(jwtResponse.token);
     }
 
+    static getToken() {
+        return sessionStorage.getItem('token');
+    }
+
     static getApiUrl(): string {
         return environment.config.apiUrl;
     }

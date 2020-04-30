@@ -1,0 +1,30 @@
+<section class="section-content">
+    <p>Application Properties</p>
+    <div class="base-grid">
+        <div class="data-grid">
+            <table class="table table-striped">
+                <thead style="pointer-events: none;">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col" style="width: 10%">Logon Time</th>
+                        <th scope="col" style="width: 60%">User Agent</th>
+                        <th scope="col" style="width: 10%">Origin</th>
+                        <th scope="col">Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let session of sessions | paginate: { itemsPerPage: 10, currentPage: page }; index as i">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ session.loginDtm | date }}</td>
+                        <td>{{ session.userAgent }}</td>
+                        <td>{{ session.origin }}</td>
+                        <td>{{ session.country }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="has-text-centered pagination">
+            <pagination-controls (pageChange)="page=$event"></pagination-controls>
+        </div>
+    </div>
+</section>

@@ -85,7 +85,7 @@ export class AuthenticationService {
     }
 
     checkSessionToken() {
-        let token = sessionStorage.getItem('token');
+        let token = Configuration.getToken();
         if (token) {
             let headers = new HttpHeaders({
                 'Content-Type': 'application/json',

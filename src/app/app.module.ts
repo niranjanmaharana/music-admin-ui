@@ -26,6 +26,9 @@ import { LoginComponent } from './components/login/login.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { PropertiesComponent } from './components/properties/properties.component';
 import { HttpLoaderComponent } from './components/http-loader/http-loader.component';
+import { UserSessionComponent } from './components/user-session/user-session.component';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { ListPropertyComponent } from './components/list-property/list-property.component';
 
 @NgModule({
 	declarations: [
@@ -41,7 +44,9 @@ import { HttpLoaderComponent } from './components/http-loader/http-loader.compon
 		LoginComponent,
 		ResetPasswordComponent,
 		PropertiesComponent,
-		HttpLoaderComponent
+		HttpLoaderComponent,
+		UserSessionComponent,
+		ListPropertyComponent
 	],
 	imports: [
 		NgIdleKeepaliveModule.forRoot(),
@@ -62,7 +67,8 @@ import { HttpLoaderComponent } from './components/http-loader/http-loader.compon
 	],
 	providers: [
 		LoaderService,
-		{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }],
+		{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+		{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

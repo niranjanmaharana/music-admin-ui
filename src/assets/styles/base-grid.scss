@@ -2,7 +2,8 @@
 @import '../../sass/mixins';
 .base-grid {
     font-size: 13px;
-    // border: 2px solid $header-background;
+    max-width: 100%;
+    overflow: auto;
     padding: 0.5rem;
     border-radius: 2px;
     .data-grid::-webkit-scrollbar {
@@ -30,7 +31,11 @@
             }
             td,
             th {
-                padding: .6rem
+                padding: .6rem;
+            }
+            th {
+                white-space: nowrap;
+                font-weight: 500;
             }
         }
     }

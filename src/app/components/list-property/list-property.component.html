@@ -1,0 +1,50 @@
+<app-properties [show]="showProperty" [property]="property"></app-properties>
+<section class="section-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="page-title">Application Properties</div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="button-container">
+                    <button class="btn btn-sm btn-primary float-right" (click)="onAddPropertyClick()">Add Property</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="base-grid">
+        <div class="data-grid table-responsive">
+            <table class="table table-striped table-hover">
+                <thead style="pointer-events: none;">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">KEY</th>
+                        <th scope="col">VALUE</th>
+                        <th scope="col">DESCRIPTION</th>
+                        <th scope="col">ACTIVE</th>
+                        <th scope="col">CREATED DTM</th>
+                        <th scope="col">CREATED BY</th>
+                        <th scope="col">UPDATED DTM</th>
+                        <th scope="col">UPDATED BY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let property of properties | paginate: { itemsPerPage: 10, currentPage: page }; index as i" (dblclick)="onRowEditClick(property)">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ property.prprtyKey }}</td>
+                        <td>{{ property.prprtyValue }}</td>
+                        <td>{{ property.prprtyDesc }}</td>
+                        <td>{{ property.active ? 'ACTIVE' : 'INACTIVE' }}</td>
+                        <td>{{ property.createdDtm | date }}</td>
+                        <td>{{ property.createdBy }}</td>
+                        <td>{{ property.updatedDtm | date }}</td>
+                        <td>{{ property.updatedBy }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="has-text-centered pagination">
+            <pagination-controls (pageChange)="page=$event"></pagination-controls>
+        </div>
+    </div>
+</section>

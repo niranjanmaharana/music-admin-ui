@@ -3,19 +3,19 @@ import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/c
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../services/authentication.service';
 import { Configuration } from '../util/config';
-import { TokenStorage } from '../util/token.storage';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class JwtInterceptor implements HttpInterceptor {
     constructor(public authenticationService: AuthenticationService) { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        debugger;
-        let currentUser = Configuration.getUser();
-        if (currentUser && TokenStorage.getToken()) {
+        let user = Configuration.getUser();
+        if (user && Configuration.getToken()) {
             request = request.clone({
                 setHeaders: {
-                    Authorization: `Bearer ${TokenStorage.getToken()}`
+                    Authorization: `Bearer ${Configuration.getToken()}`
                 }
             });
         }
